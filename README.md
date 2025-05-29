@@ -15,6 +15,29 @@
 ## 🚀 Getting Started
 
 This project consists of two parts:
+## Getting Started
+
+### 🛠 Backend (Strapi)
+
+1. Clone the repo and install dependencies:
+
+   ```bash
+   cd blog-backend
+   npm install
+````
+
+2. Start the Strapi server:
+
+   ```bash
+   npm run develop
+   ```
+
+3. Ensure Strapi is running at:
+   👉 `http://localhost:1337`
+   or
+   👉 `http://127.0.0.1:1337` (in case `localhost` doesn’t work)
+
+---
 
 **Frontend** – Next.js App (in `blog-frontend`)
 
