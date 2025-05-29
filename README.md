@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+````markdown
+# Blog Assignment – Next.js + Strapi
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Built using **Next.js App Router**
+- Blog posts fetched from **Strapi v5**
+- Supports **Dynamic Zones** (Rich Text, Image Block, Quote Block)
+- Dynamic routing for individual blog posts
+- Clean, modular, and component-based architecture
+
+---
+
+## 🚀 Getting Started
+
+This project consists of two parts:
+
+**Frontend** – Next.js App (in `blog-frontend`)
+
+---
+
+### 💻 Frontend (Next.js)
+
+1. Go to the frontend folder:
+
+   ```bash
+   cd blog-frontend
+   ```
+
+2. Create a `.env` file and add this:
+
+   ```env
+   NEXT_PUBLIC_API_URL=http://localhost:1337/api
+   ```
+
+   ⚠️ If you face any issues with `localhost`, try:
+
+   ```env
+   NEXT_PUBLIC_API_URL=http://127.0.0.1:1337/api
+   ```
+
+3. Install frontend dependencies and start the development server:
+
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+4. Visit the blog at:
+   [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📁 Project Structure
+
+```
+root/
+├── nextjs-frontend/
+│   ├── app/
+│   │   └── blog/
+│   │       └── [slug]/
+│   ├── components/
+│   └── lib/strapi.ts
+├── strapi-backend/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧩 Dynamic Zone Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* `content.rich-text` → Renders HTML from rich text
+* `content.image-block` → Displays an image with alt text
+* `content.quote-block` → Shows a quote with attribution
 
-## Learn More
+These are rendered dynamically based on the `__component` field in the API response.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 Example API Response
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Heaven",
+      "author": "Shabbir",
+      "slug": "heaven",
+      "createdAt": "2025-05-28T12:08:17.923Z"
+    }
+  ]
+}
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🙋 Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Shabbir**
+Built as part of a fullstack blog assignment using Next.js and Strapi v5.
